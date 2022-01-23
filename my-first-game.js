@@ -1,7 +1,3 @@
-console.log("Hey! Welcome to our little game!")
-console.log("You will be playing Rock, Paper, Scissors with the computer and the first one to reach 5, will be crowned the winner.")
-console.log("Good luck!")
-
 let computerSelection;
 let playerSelection = prompt("Please type your selection. Rock, paper or scissors: ").toLowerCase().trim();
 let computerPoints = 0;
@@ -22,7 +18,7 @@ function playerPlay(){
         case 'scissors':
             break;
         default:
-            console.log("Incorrect selection. Please try again");
+            //console.log("Incorrect selection. Please try again");
     }
 }
 
@@ -33,43 +29,43 @@ function playRound(){
         playerPlay();
     }
     else if (computerSelection === "rock" && playerSelection === "scissors"){
-        console.log("You lost. Lets try again.")
+        //console.log("You lost. Lets try again.")
         ++computerPoints;
         computerPlay();
         playerPlay();  
     }
     else if (computerSelection === "rock" && playerSelection === "paper"){
-        console.log("You won. Lets try again")
+        //console.log("You won. Lets try again")
         ++playerPoints;
         computerPlay();
         playerPlay();  
     }
     else if (computerSelection === "paper" && playerSelection === "scissors"){
-        console.log("You won. Lets try again")
+        //console.log("You won. Lets try again")
         ++playerPoints;
         computerPlay();
         playerPlay();  
     }
     else if (computerSelection === "paper" && playerSelection === "rock"){
-        console.log("You lost. Lets try again.")
+        //console.log("You lost. Lets try again.")
         ++computerPoints;
         computerPlay();
         playerPlay();  
     }
     else if (computerSelection === "scissors" && playerSelection === "paper"){
-        console.log("You lost. Lets try again.")
+        //console.log("You lost. Lets try again.")
         ++computerPoints;
         computerPlay();
         playerPlay();  
     }
     else if (computerSelection === "scissors" && playerSelection === "rock"){
-        console.log("You won. Lets try again")
+        //console.log("You won. Lets try again")
         ++playerPoints;
         computerPlay();
         playerPlay();  
     }
     else {
-        console.log("Make a proper selection. Rock, Paper, or Scissors")
+        //console.log("Make a proper selection. Rock, Paper, or Scissors")
         computerPlay();
         playerPlay();
     }
@@ -84,7 +80,7 @@ function game(){
 }
 
 function declareWinner(){
-    console.log(playerPoints === 5? "Yay! You won the game!":"You lost the game...");
+    //console.log(playerPoints === 5? "Yay! You won the game!":"You lost the game...");
 }
 
 game();
