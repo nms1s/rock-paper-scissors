@@ -26,6 +26,7 @@ body {
     color:#E8E6E3;
     text-align: center;
     line-height: 32px;
+    height: 100px;
 }
 
 
@@ -85,6 +86,38 @@ a:hover{
     color: #F84982;
 }
 
+/*DROPDOWN GAME RULES*/
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.drop-content{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    background-color:#292531 ;
+    color: #E8E6E3;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #F84982;
+}
+
+.drop-content div{
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .drop-content {
+    display: block;
+}
 
 /* IDs */
 
@@ -92,7 +125,9 @@ a:hover{
     max-width: 96px;
     max-height: 96px;
     flex-shrink: 0;
+    cursor: pointer;
 }
+
 
 #score {
     padding: 32px;
