@@ -10,17 +10,32 @@ body {
 }
 
 .container-two {
-    background-color: #262254;
+    background-color: #2B2B35;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container-three {
     background-color: #543884;
 }
 
-.main {
-    padding: 11cm 1cm;
-    color: #FFA45E;
+.narrator-text {
+    padding: 32px;
+    color:#FFA45E;
+    text-align: center;
+    line-height: 32px;
 }
+
+
+button {
+    margin: 16px;
+}
+
+.animation {
+    color: white;
+}
+
 
 .page-header {
     display: flex;
@@ -56,4 +71,9 @@ a {
     max-width: 96px;
     max-height: 96px;
     flex-shrink: 0;
+}
+
+#score {
+    padding: 32px;
+    color:#FFA45E;
 }

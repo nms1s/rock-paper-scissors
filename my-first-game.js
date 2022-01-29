@@ -1,5 +1,5 @@
 let computerSelection;
-let playerSelection = prompt("Please type your selection. Rock, paper or scissors: ").toLowerCase().trim();
+let playerSelection;
 let computerPoints = 0;
 let playerPoints = 0;
 
@@ -8,79 +8,108 @@ function computerPlay(){
     computerSelection = computerChoices[Math.floor(Math.random()*computerChoices.length)];
 }
 
-computerPlay();
+computerPlay(); // give computerSelection an initial value.
 
-function playerPlay(){
-    playerSelection = prompt("Please type your selection. Rock, paper or scissors: ").toLowerCase().trim();
-    switch (playerSelection){  
-        case 'rock':
-        case 'paper':
-        case 'scissors':
-            break;
-        default:
-            //console.log("Incorrect selection. Please try again");
-    }
-}
 
 function playRound(){
     if (computerSelection === playerSelection) {
-        console.log("Tie.");
+        narratorText.innerText = "That's a Tie.";
         computerPlay();
-        playerPlay();
+        checkWinner();
     }
     else if (computerSelection === "rock" && playerSelection === "scissors"){
-        //console.log("You lost. Lets try again.")
+        narratorText.innerText = "You lost.\nRock beats scissors.\nLets try again.";
         ++computerPoints;
-        computerPlay();
-        playerPlay();  
+        computerPlay();  
+        checkWinner();
     }
     else if (computerSelection === "rock" && playerSelection === "paper"){
-        //console.log("You won. Lets try again")
+        narratorText.innerText = "Easy win!\nPaper beats rock.\nLet's go again!";
         ++playerPoints;
-        computerPlay();
-        playerPlay();  
+        computerPlay();  
+        checkWinner();
     }
     else if (computerSelection === "paper" && playerSelection === "scissors"){
-        //console.log("You won. Lets try again")
+        narratorText.innerText = "Your win!\nScissors beat paper.";
         ++playerPoints;
-        computerPlay();
-        playerPlay();  
+        computerPlay();  
+        checkWinner();
     }
     else if (computerSelection === "paper" && playerSelection === "rock"){
-        //console.log("You lost. Lets try again.")
+        narratorText.innerText = "Ouch, that's a loss.\n Paper beats rock\nGive it another try.";
         ++computerPoints;
         computerPlay();
-        playerPlay();  
+        checkWinner();  
     }
     else if (computerSelection === "scissors" && playerSelection === "paper"){
-        //console.log("You lost. Lets try again.")
+        narratorText.innerText = "You lose...\nScissors beat paper\nLet's go again.";
         ++computerPoints;
         computerPlay();
-        playerPlay();  
+        checkWinner();  
     }
     else if (computerSelection === "scissors" && playerSelection === "rock"){
-        //console.log("You won. Lets try again")
+        narratorText.innerText = "SMASH! Rock beats scissors.\nWell done!";
         ++playerPoints;
-        computerPlay();
-        playerPlay();  
+        computerPlay(); 
+        checkWinner(); 
     }
     else {
-        //console.log("Make a proper selection. Rock, Paper, or Scissors")
+        narratorText.innerText = "Hmmm something went wrong.";
         computerPlay();
-        playerPlay();
+        checkWinner();
     }
     
 }
 
-function game(){
-    while (playerPoints < 5 && computerPoints < 5){
-        playRound();
-    }
-    declareWinner();
+function checkWinner(){
+    if (playerPoints < 5 && computerPoints < 5){
+    }else{
+        declareWinner();
+        playerPoints = 0;
+        computerPoints = 0;
+        //startNewGame();
+    }  
 }
 
 function declareWinner(){
-    //console.log(playerPoints === 5? "Yay! You won the game!":"You lost the game...");
+    narratorText.innerText = playerPoints === 5? "Yay! You won the game!!!\nLet's play another one!":"Sorry, it seems that you lost the game...\nLet's play another one!";
 }
 
-game();
+function startNewGame(){    
+}
+
+function updateScore(){
+    score.innerText = `SCORE: ${playerPoints} / ${computerPoints}`;
+}
+
+// Event listeners
+
+const rockButton = document.querySelector("#rock-btn");
+rockButton.addEventListener("click", function(){
+    playerSelection = "rock";
+    playRound();
+    updateScore();
+});
+
+const paperButton = document.querySelector("#paper-btn");
+paperButton.addEventListener("click", function(){
+    playerSelection = "paper";
+    playRound();
+    updateScore();
+});
+
+const scissorsButton = document.querySelector("#scissors-btn");
+scissorsButton.addEventListener("click", function(){
+    playerSelection = "scissors";
+    playRound();
+    updateScore();
+});
+
+const score = document.querySelector('#score');
+updateScore();
+
+const narratorText = document.querySelector(".narrator-text");
+
+
+// EXECUTE GAME
+//checkWinner();
