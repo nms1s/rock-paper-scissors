@@ -6,8 +6,6 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    min-width: 100%;
-    min-height: 100%;
 }
 
 .container-one {
@@ -57,12 +55,26 @@ body {
      -3px 3px 12px 0 rgba(248, 78, 134, 0.3);
 }
 
-.graphics-canvas {
+.animation-box {
     border: 2px solid #F84982;
     border-radius: 10px;
     width: 500px;
     height: 250px;
     margin: 32px;
+    display: flex;
+    background-color: #292531;
+}
+
+#box-left, #box-right {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fist-img {
+    max-height: 120px;
 }
 
 
@@ -95,6 +107,13 @@ a {
 
 a:hover{
     color: #F84982;
+}
+
+.names {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    margin-bottom: 64px;
 }
 
 /*DROPDOWN GAME RULES*/
@@ -141,6 +160,6 @@ a:hover{
 
 
 #score {
-    margin: 0px 32px 32px 32px;
+    margin: 32px 32px 0px 32px;
     color:#E8E6E3;
 }

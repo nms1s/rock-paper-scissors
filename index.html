@@ -30,16 +30,31 @@
 
     <div class="container-two">
         <div class="narrator-text">Welcome to the game! Please make your choice. 
-            <br> computer has already decided. No cheating. Promise.</div>
+            <br> Our computer has already decided. <br> No cheating. We promise.</div>
             
         <div class="buttons">
             <button class="btn" id="rock-btn">ROCK</button>
             <button class="btn" id="paper-btn">PAPER</button>
             <button class="btn" id="scissors-btn">SCISSORS</button>
         </div>
-        <canvas class=graphics-canvas></canvas>
-        <script src="canvas.js"></script>
         <div id="score">SCORE</div>
+        <div class=animation-box>
+            <div id="box-left">
+                <img src="images/rock.png" alt="" class="fist-img">
+            </div>
+            <div id="box-right">
+                <img src="images/rock-inv.png" alt="" class="fist-img">
+            </div>
+            <audio src="sounds/won-game.wav" id="won-game"></audio>
+            <audio src="sounds/lost-game.wav " id="lost-game"></audio>
+            <audio src="sounds/won-round.wav" id="won-round"></audio>
+            <audio src="sounds/lost-round.wav " id="lost-round"></audio>
+            <audio src="sounds/tie-round.wav" id="tie-round"></audio>
+        </div>
+        <div class="names">
+            <div>YOU</div>
+            <div>COMPUTER</div>
+        </div>
     </div>
 
     <div class="container-three">
