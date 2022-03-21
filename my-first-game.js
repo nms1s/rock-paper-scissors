@@ -13,43 +13,43 @@ function computerPlay(){
 
 function playRound(){
     if (computerSelection === playerSelection) {
-        narratorText.innerText = "That's a Tie.";
         tieRoundAudio.play();
+        narratorText.innerText = "That's a Tie.";
         checkWinner();
     }
     else if (computerSelection === "rock" && playerSelection === "scissors"){
-        narratorText.innerText = "You lost.\nRock beats scissors.\nLets try again.";
         lostRoundAudio.play();
+        narratorText.innerText = "You lost.\nRock beats scissors.\nLets try again.";
         ++computerPoints;  
         checkWinner();
     }
     else if (computerSelection === "rock" && playerSelection === "paper"){
-        narratorText.innerText = "Easy win!\nPaper beats rock.\nLet's go again!";
         wonRoundAudio.play();
+        narratorText.innerText = "Easy win!\nPaper beats rock.\nLet's go again!";
         ++playerPoints;  
         checkWinner();
     }
     else if (computerSelection === "paper" && playerSelection === "scissors"){
-        narratorText.innerText = "Your win!\nScissors beat paper.";
         wonRoundAudio.play();
+        narratorText.innerText = "Your win!\nScissors beat paper.";
         ++playerPoints;  
         checkWinner();
     }
     else if (computerSelection === "paper" && playerSelection === "rock"){
-        narratorText.innerText = "Ouch, that's a loss.\n Paper beats rock\nGive it another try.";
         lostRoundAudio.play();
+        narratorText.innerText = "Ouch, that's a loss.\n Paper beats rock\nGive it another try.";
         ++computerPoints;
         checkWinner();  
     }
     else if (computerSelection === "scissors" && playerSelection === "paper"){
-        narratorText.innerText = "You lose...\nScissors beat paper\nLet's go again.";
         lostRoundAudio.play();
+        narratorText.innerText = "You lose...\nScissors beat paper\nLet's go again.";
         ++computerPoints;
         checkWinner();  
     }
     else if (computerSelection === "scissors" && playerSelection === "rock"){
-        narratorText.innerText = "SMASH! Rock beats scissors.\nWell done!";
         wonRoundAudio.play();
+        narratorText.innerText = "SMASH! Rock beats scissors.\nWell done!";
         ++playerPoints; 
         checkWinner(); 
     }
